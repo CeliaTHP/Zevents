@@ -15,10 +15,13 @@ Attendance.destroy_all
 @user = User.create(
 first_name: Faker::Name.first_name,
 last_name: Faker::Name.last_name,
-email: Faker::Internet.email,
+#email: Faker::Internet.email,
+#yopmail
+email: "#{Faker::Internet.username}@yopmail.com",
+
 description: Faker::TvShows::RuPaul.quote
 )
-puts "#{@user.id} - #{@user.first_name} #{@user.last_name} added, #{@user.description}\n\n"
+puts "#{@user.id} - #{@user.first_name} #{@user.last_name} added, #{@user.description}, contact: #{@user.email}"
 puts "-" * 80
 end
 
