@@ -18,10 +18,10 @@ last_name: Faker::Name.last_name,
 #email: Faker::Internet.email,
 #yopmail
 email: "#{Faker::Internet.username}@yopmail.com",
-
-description: Faker::TvShows::RuPaul.quote
+description: Faker::TvShows::RuPaul.quote,
+password: "#{Faker::Number.number(digits:10)}"
 )
-puts "#{@user.id} - #{@user.first_name} #{@user.last_name} added, #{@user.description}, contact: #{@user.email}"
+puts "n°#{@user.id} - #{@user.first_name} #{@user.last_name} added, #{@user.description}, contact: #{@user.email}"
 puts "-" * 80
 end
 
@@ -33,14 +33,14 @@ start_date: Faker::Time.forward(days: 100),
 duration: rand(1..20)*5,
 description: Faker::TvShows::SouthPark.quote,
 price: rand(1..1000),
-location: Faker::TvShows::RickAndMorty.location
-#admin: @user
+location: Faker::TvShows::RickAndMorty.location,
+creator: User.all.sample
 )
-puts "RDV : #{@event.title} \n at #{@event.location} \n for #{@event.price}€ \n"
+puts "RDV : #{@event.title} \n at #{@event.location} \n for #{@event.price}€ \n by #{@event.creator.first_name}"
 puts "-" * 80
 end
 
-#attendances
+#attendance
 10.times do
 @attendance = Attendance.create(
 stripe_customer_id: Faker::Number.number(digits: 10),
@@ -48,4 +48,6 @@ user: User.all.sample, #pick random user
 event: Event.all.sample, #pick random event
 )
 end
+
 puts "Event joined by randoms"
+

@@ -65,3 +65,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'faker'
 gem 'dotenv-rails'
+gem 'devise'
+gem 'bootstrap'
+gem 'jquery-rails'

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Salut  <%= @creator.first_name %> ,un nouvel invité : <%=@user.first_name%> <%=@user.last_name%> est prévu
+pour l'évenement <%=@event.title%> </h1>
+    <p>
+       L'event est prévu le <%=@event.start_date%> et annonce du lourd: <%= @event.description %>.
+    </p>
+    <p>
+      Pour accéder à ton espace client, connecte-toi via : <%= @url %>.
+    </p>
+    <p> À très vite sur monsite.fr !
+  </body>
+</html>
