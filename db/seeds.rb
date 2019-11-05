@@ -28,11 +28,11 @@ end
 #events
 10.times do
 @event = Event.create(
-title: Faker::TvShows::RickAndMorty.quote,
+title: Faker::Hipster.sentence(word_count: 5),
 start_date: Faker::Time.forward(days: 100),
 duration: rand(1..20)*5,
 description: Faker::TvShows::SouthPark.quote,
-price: rand(1..1000),
+price: rand(1..100),
 location: Faker::TvShows::RickAndMorty.location,
 creator: User.all.sample
 )
