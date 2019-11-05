@@ -1,4 +1,6 @@
+
 <ul>
+<%#sico%>
   <% if user_signed_in? %>
     <li>
       <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
@@ -15,15 +17,23 @@
     <li>
       <%= link_to "Edit email / password", edit_user_registration_path %>
     </li>
-
+<%#si deco%>
   <% else %>
-    <li>    
-      <%= link_to "Sign in", new_user_session_path %>
-    </li>
+<div style= "margin: 280px">
+<center>
+<h1>Vous avez déjà un compte ? Identifez-vous</h1><br>
 
-    <li>
-      <%= link_to "Sign up", new_user_registration_path %>
-    </li>
+ <%#= link_to "Sign in", new_user_session_path %>
+
+<a href = "/users/sign_in" class ="btn btn-info btn-lg btn-block">Sign in</button></a>
+<br><br>
+<h1>Sinon, créez votre compte en un clic! </h1><br>
+
+<%#= link_to "Sign up", new_user_registration_path %>
+
+<a href = "/users/sign_up" class ="btn btn-info btn-lg btn-block">Sign up</button></a>
+</center>
 
   <% end %>
 </ul>
+</div>
