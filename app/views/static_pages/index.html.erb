@@ -1,22 +1,19 @@
-
-<ul>
 <%#sico%>
+<ul>
   <% if user_signed_in? %>
-    <li>
-      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-    </li>
+<br><br><br>
+<center>
+<h1>Bienvenue dans ton espace privé n° <%=current_user.id%></h1><br>
+<br>
+   <center> <h3 class= "mb-3">  Voici ton email :<%= current_user.email %></h3></center>
+<br><br>
+<%= link_to "Edit email / password", edit_user_registration_path,class: " btn btn-lg btn-outline-secondary"%> 
+<br><br>
+  <%= link_to "Secret page", static_pages_secret_path, class: "btn btn-lg btn-outline-warning"%>
+<br><br>
+</center>
+  <%= link_to "Sign out", destroy_user_session_path, class:"btn btn-lg btn-info", method: :delete %></span>
 
-    <li>
-      Voici ton email : <%= current_user.email %>
-    </li>
-
-    <li>
-      <%= link_to "Secret page", static_pages_secret_path %>
-    </li>
-
-    <li>
-      <%= link_to "Edit email / password", edit_user_registration_path %>
-    </li>
 <%#si deco%>
   <% else %>
 <div style= "margin: 280px">
