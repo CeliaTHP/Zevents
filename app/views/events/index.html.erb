@@ -1,30 +1,56 @@
-<br><br><br>
-<h1 style="text-align:center;">Des Zevents dans ls parages ?</h1>
-<br>
-<h3 style="text-align:center;"><a class="btn btn-dark" href="/events/new">Clique ICI</h3></a>
-<br>
-<p style="text-align:center;"><i>PS: Ferme la porte y'a la pookie dans le sas -Lavoisier</i></p>
-<br>
-<% @event.each do |g| %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Heroic Features - Start Bootstrap Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/heroic-features.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Jumbotron Header -->
+    <header class="jumbotron my-3">
+      <h1 class="text-center display-3">My Zevents</h1>
+      <h3 class="text-center">Retrouve toutes les actus sur les Zevents les plus chauds près de chez toi !</h3>
+</header>
+</div>
+<% @events.each do |z| %>
+
 <center>
-  <div class="card" style="width: 18rem; text-align:center;">
-    <img class="card-img-top" src="https://wallpapercave.com/wp/2RQ8Phs.jpg" alt="secret image">
-    <div class="card-body">
-     <a class="card-title"> <%=g.title %> </a>
-      <p class="card-text"> <% a = g.user_id %> De : <%= @user.find(a).first_name %></p>
-      <a class="btn btn-dark" href="http://localhost:3000/gossips/<%=g.id%>">Voir le Gossip !</a>
-    </div>
+<div class="col-lg-6 col-lg-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h4 class="card-title"><%=z.title%></h4>
+            <p class="card-text"><%=z.description%></p>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="btn btn-lg btn-success">Lieu: <%=z.location%></a>
+            <a href="#" class="btn btn-lg btn-danger">Intéressé par cet event ?</a>
+          </div>
+        </div>
+</div>
+
 <%end%>
-  </div>
-  <br>
 </center>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<div class ="jumbotron jumbotron-fluid">
-<div class ="container">
-<h1 class= "ml11">
-<span class ="text-wrapper">
-<div style = "padding-top: 60px;">
-<>
-</span>
-</span>
+</body>
 
+
+</html>
