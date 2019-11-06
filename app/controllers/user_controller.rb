@@ -9,6 +9,10 @@ end
 
 def create
 @user = User.new(params)
-
 end
+
+def show
+@users = user
+end
+
 end

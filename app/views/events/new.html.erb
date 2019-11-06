@@ -1,0 +1,39 @@
+<div class="row">
+	<div class="col-md-10 col-lg-5 mx-auto">
+		<div class= "h4 text-center">
+			<center>
+				<br>
+				<h1>Crée ton évenement : </h1>
+				<br/>
+				<%= form_tag url_for(action: 'create'), method: "post" do %>
+				<%= label_tag "Nom de l'évenement :" %>
+				<div class="form-label-group">
+					<%= text_field_tag 'title', value = nil, options = {style:"height:40px;width:500px",class: "form-control"} %>
+				</div>
+				<%= label_tag "Date (YYYY-MM-DD) : " %>
+				<div class="form-label-group">
+					<%= text_field_tag 'start_date', value = nil, options = {style:"height:40px;width:500px",class: "form-control"} %>
+				</div>
+				<%= label_tag "Durée(en minutes !):" %>
+				<div class="form-label-group">
+					<%= text_field_tag 'duration', value = nil, options = {style:"height:40px;width:500px",class: "form-control"} %>
+				</div>
+				<%= label_tag "Description :"  %>
+				<div class="form-label-group">
+					<%= text_field_tag 'description', value = nil, options = {style:"height:40px;width:500px",class: "form-control"} %>
+				</div>
+				<%= label_tag "Prix :" %>
+				<div class="form-label-group">
+					<%= text_field_tag 'price', value = nil, options = {style:"height:40px;width:500px",class: "form-control"} %>
+				</div>
+				<%= label_tag "Lieu :" %>
+				<div class="form-label-group">
+					<%= text_field_tag 'location', value = nil, options = {style:"height:40px;width:500px",class: "form-control"} %>
+				</div>
+				<br>
+				<%= submit_tag "Créer mon Event", class: 'btn btn-lg btn-danger btn-block font-weight-bold'  %>
+				<% end %>
+			</center>
+		</div>
+	</div>
+</div>
